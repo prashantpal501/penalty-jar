@@ -4,9 +4,57 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Penalty Jar</title>
+    <style>
+        body{font-family: 'Calibri'; font-size: 16px;}
+        .container {max-width: 500px; border: 1px solid #ccc; padding: 30px; box-sizing: border-box; margin: 50px auto 0;        }
+        .container h3{font-size: 24px; margin: 0 0 30px;}
+        .container input, select {padding: 8px 15px; width: calc(100% - 95px); box-sizing: border-box; margin-bottom: 3px;}
+        .container button{background: #035fff; color: #fff; padding: 8px 20px; font-size: 16px; border: none; cursor: pointer;}
+    </style>
 </head>
 <body>
-    <h2 class="penalty">50</h2>
-    
+    <!-- 
+    <div class="container">
+        <h2 class="penalty">50</h2>
+        <button onclick="addPenalty()" id="">Add</button>
+        <br/>
+        <br/>
+        <div>Total =  <span id="output">0</span></div>
+    </div>
+    <script>
+        let penalty = 0;
+        function addPenalty(){
+            penalty = 50 + penalty;
+            document.getElementById('output').innerHTML = " " + penalty;
+        }
+    </script>
+    -->
+
+    <div class="container">
+        <input type="text" id="penaltyValue" value="" />
+        <button onclick="submit()" id="">submit</button>
+        <br/>
+        <br/>
+        <h3>Penalty = <span id="currentPenalty">0</span></h3>
+        <br/>
+        <button onclick="addPenalty()" id="">Add</button>
+        <br/>
+        <br/>
+        <div>Total =  <span id="output">0</span></div>
+    </div>
+    <script>
+        let penalty = 0; 
+        let penaltyValue = 0;
+        function submit(){
+            penaltyValue = Number(document.getElementById('penaltyValue').value);
+            document.getElementById('currentPenalty').innerHTML = penaltyValue;
+        }
+        
+       function addPenalty(){
+        penalty = penaltyValue + penalty;
+        document.getElementById('output').innerText = penalty;
+       }
+    </script>
+
 </body>
 </html>
